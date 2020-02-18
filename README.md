@@ -42,9 +42,9 @@ listening on port 8080
     1. **Provider Name**: `synology-notifications`
     2. **SMS URL**: `http://<ip address of synology-notifications service>:8080`
     3. **HTTP Method**: `POST`
-5. Click  `Add` and set the Parameter to `api_key` and leave Value empty then click `Next`
-6. Click `Add` and set the Paramater to `phone_number` and leave Value empty (**NOTE**: Synology requires this field to exist even though were not going to use it)
-7. Click `Add` and set the Paramater to `message` set the Value to `Hello world` (Synology requires a sample value) and click `Next`
+5. Click  `Add` and set the `Parameter` to `api_key` and leave Value empty then click `Next`
+6. Click `Add` and set the `Paramater` to `phone_number` and leave Value empty (**NOTE**: Synology requires this field to exist even though were not going to use it)
+7. Click `Add` and set the `Paramater` to `message` set the Value to `Hello world` (Synology requires a sample value) and click `Next`
 8. Set the type of the `api_key` Parameter to `API Key`
 9. Set the type of the `phone_number` Parameter to `Phone Number`
 10. Set the type of the `message` Parameter to `Message content` and click `Apply`
