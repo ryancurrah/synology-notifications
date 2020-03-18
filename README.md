@@ -52,7 +52,7 @@ listening on port 8080
 12. In the `API Key` field paste the API Key you choose for the service and click `Apply`
 13. Test the notifcation service by clicking `Send a test SMS message`
 
-## Setting up Synology screenshots
+## Setting up Synology with screenshots
 
 ![Step 1](https://github.com/ryancurrah/synology-notifications/blob/master/assets/Step_1.png?raw=true)
 
