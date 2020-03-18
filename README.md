@@ -54,12 +54,12 @@ listening on port 8080
 
 ## Setting up Synology screenshots
 
-![Step 1](/assests/Step_1.png)
+![Step 1](https://github.com/ryancurrah/synology-notifications/blob/master/assets/Step_1.png?raw=true)
 
-![Step 2](/assests/Step_2.png)
+![Step 2](https://github.com/ryancurrah/synology-notifications/blob/master/assets/Step_2.png?raw=true)
 
-![Step 3](/assests/Step_3.png)
+![Step 3](https://github.com/ryancurrah/synology-notifications/blob/master/assets/Step_3.png?raw=true)
 
-![Step 4](/assests/Step_4.png)
+![Step 4](https://github.com/ryancurrah/synology-notifications/blob/master/assets/Step_4.png?raw=true)
 
-![Step 5](/assests/Step_5.png)
+![Step 5](https://github.com/ryancurrah/synology-notifications/blob/master/assets/Step_5.png?raw=true)
