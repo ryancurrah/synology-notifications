@@ -53,3 +53,15 @@ listening on port 8080
 5. Select `synology-notifications` from the `SMS service provider` dropdown
 6. In the `API Key` field paste the API Key you choose for the service and click `Apply`
 7. Test the notifcation service by clicking `Send a test SMS message`
+
+## Setting up Synology screenshots
+
+![Step 1](/assests/Step_1.png)
+
+![Step 2](/assests/Step_2.png)
+
+![Step 3](/assests/Step_3.png)
+
+![Step 4](/assests/Step_4.png)
+
+![Step 5](/assests/Step_5.png)
