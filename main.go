@@ -20,16 +20,17 @@ type SynologyMessage struct {
 
 type AppConfig struct {
 	ListenPort string `env:"LISTEN_PORT" envDefault:"8080"`
-	ApiKey     string `env:"API_KEY,required"`
+	APIKey     string `env:"API_KEY,required"`
 }
 
 type SlackConfig struct {
 	Webhook string `env:"SLACK_WEBHOOK,required"`
+	Color   string `env:"SLACK_ATTACHMENT_COLOR" envDefault:"warning"`
 }
 
-// PostHandler send notifcations from synology to slack
+// PostHandler send notifications from synology to slack
 func PostHandler(w http.ResponseWriter, r *http.Request) {
-	if r.Header.Get("api_key") != appConfig.ApiKey {
+	if r.Header.Get("api_key") != appConfig.APIKey {
 		http.Error(w, "invalid api key", http.StatusUnauthorized)
 		log.Printf("invalid api key")
 		return
@@ -51,7 +52,7 @@ func PostHandler(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		msg := slack.WebhookMessage{Attachments: []slack.Attachment{{Color: "warning", Text: fmt.Sprintf("%s", synologyMessage.Message)}}}
+		msg := slack.WebhookMessage{Attachments: []slack.Attachment{{Color: slackConfig.Color, Text: fmt.Sprintf("%s", synologyMessage.Message)}}}
 
 		err = slack.PostWebhook(slackConfig.Webhook, &msg)
 		if err != nil {
@@ -76,8 +77,8 @@ func main() {
 		panic(err)
 	}
 
-	if len(appConfig.ApiKey) < 32 {
-		panic(fmt.Errorf("api key not long enough it should be 32 characters long not %d", len(appConfig.ApiKey)))
+	if len(appConfig.APIKey) < 32 {
+		panic(fmt.Errorf("api key not long enough it should be 32 characters long not %d", len(appConfig.APIKey)))
 	}
 
 	mux := http.NewServeMux()
