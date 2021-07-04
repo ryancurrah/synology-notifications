@@ -1,12 +1,44 @@
 builds:
-- env:
-  - CGO_ENABLED=0
+  - id: synology-notifications
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - windows
+      - darwin
 archives:
-- replacements:
-    darwin: Darwin
-    linux: Linux
-    windows: Windows
-    386: i386
-    amd64: x86_64
+  - replacements:
+      darwin: Darwin
+      linux: Linux
+      windows: Windows
+      386: i386
+      amd64: x86_64
+dockers:
+  - goos: linux
+    ids:
+      - synology-notifications
+    image_templates:
+      - "ryancurrah/synology-notifications:latest"
+      - "ryancurrah/synology-notifications:{{ .Tag }}"
+      - "ryancurrah/synology-notifications:v{{ .Major }}"
+    build_flag_templates:
+      - "--pull"
+      - "--label=org.opencontainers.image.created={{.Date}}"
+      - "--label=org.opencontainers.image.title={{.ProjectName}}"
+      - "--label=org.opencontainers.image.revision={{.FullCommit}}"
+      - "--label=org.opencontainers.image.version={{.Version}}"
+docker_manifests:
+  - name_template: ryancurrah/synology-notifications:{{ .Version }}
+    image_templates:
+      - ryancurrah/synology-notifications:{{ .Version }}-amd64
+      - ryancurrah/synology-notifications:{{ .Version }}-arm64v8
 checksum:
   name_template: 'checksums.txt'
+snapshot:
+  name_template: "{{ .Tag }}-next"
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
